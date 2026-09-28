@@ -102,4 +102,4 @@ ENV/
 .ropeproject
 
 # Trash
-.png
+.png.venv/

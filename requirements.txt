@@ -1,0 +1,5 @@
+numpy
+neat-python==0.92
+graphviz
+matplotlib
+pytest
