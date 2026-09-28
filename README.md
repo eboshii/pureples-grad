@@ -20,7 +20,7 @@ The original `es_hyperneat.py` is unchanged and serves as the baseline.
 
 **Checks** (`python -m pytest tests`)
 
-* `test_regression_2d.py`: with n = 2 and the published settings (`split_test="variance"`, `cache=False`, `fix_iteration=False`), the new module builds exactly the same hidden nodes, connections and weights as the original on 100 random CPPNs, for each of three parameter sets.
+* `test_regression_2d.py`: with n = 2 and the published settings (`split_test="variance"`, `cache=False`, `fix_iteration=False`), the new module builds exactly the same hidden nodes, connections and weights as the original on 100 random CPPNs, for each of three parameter sets (30 CPPNs for the deep set).
 * `test_diff_cppn.py`: the backward pass matches central finite differences on random CPPNs using 12 activation functions, and the forward pass matches neat-python exactly.
 * `test_nd.py`: trees in 2–4 dimensions tile each cell correctly, every split test builds a feed-forward network, the feed-forward axis is respected, the iteration fix explores each node once, and on small cells the gradient score matches the sampled variance to within 1%.
 

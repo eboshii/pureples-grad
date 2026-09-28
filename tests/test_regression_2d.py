@@ -36,18 +36,19 @@ def as_dict(conns):
     return {((c.x1, c.y1), (c.x2, c.y2)): c.weight for c in conns}
 
 
-@pytest.mark.parametrize("params", PARAM_SETS)
-def test_search_matches_pureples(params):
-    """Every connection found by the three search phases, before cleaning."""
+@pytest.mark.parametrize("params,seeds", [(PARAM_SETS[0], 100), (PARAM_SETS[1], 30), (PARAM_SETS[2], 100)])
+def test_search_matches_pureples(params, seeds):
+    """Every connection found by the three search phases, before cleaning.
+    The deep parameter set builds large trees, and pureples is slow on them, so it uses fewer seeds."""
     config = cppn_config(5)
     nonempty = 0
-    for seed in range(100):
+    for seed in range(seeds):
         cppn = random_cppn(config, seed)
         expected = as_dict(RawESNetwork(SUBSTRATE, cppn, params).es_hyperneat()[1])
         got = RawESNetworkND(SUBSTRATE, cppn, {**params, **PUBLISHED}).es_hyperneat()[1]
         assert got == expected, seed
         nonempty += bool(expected)
-    assert nonempty >= 30  # the comparison must cover real searches, not just empty ones
+    assert nonempty >= 0.3 * seeds  # the comparison must cover real searches, not just empty ones
 
 
 @pytest.mark.parametrize("params", [PARAM_SETS[0], PARAM_SETS[2]])
