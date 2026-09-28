@@ -60,7 +60,7 @@ def test_feedforward_axis():
 
 
 def test_gradient_score_approximates_variance_on_small_cells():
-    """Section 1 of the post: Var over child centres ~ (r/2)^2 |grad w|^2 as r -> 0."""
+    """To first order, Var over the 2^n child centres = (r/2)^2 * |grad w|^2, so the ratio tends to 1 as r -> 0."""
     config = cppn_config(7)
     rng = np.random.default_rng(0)
     ratios = []

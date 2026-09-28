@@ -1,6 +1,6 @@
-# This fork: n-dimensional ES-HyperNEAT with gradient split tests
+# pureples-grad: n-dimensional ES-HyperNEAT with gradient split tests
 
-This fork of [PUREPLES](https://github.com/ukuleleplayer/pureples) adds
+pureples-grad is a fork of [PUREPLES](https://github.com/ukuleleplayer/pureples) that adds
 `pureples/es_hyperneat/es_hyperneat_nd.py`, an ES-HyperNEAT that works on substrates of any
 dimension and can decide where to split the tree with a gradient instead of samples.
 The original `es_hyperneat.py` is unchanged and serves as the baseline.

@@ -2,14 +2,14 @@ from setuptools import setup
 
 setup(
     name='pureples',
-    version='0.0',
+    version='0.1.0',
     author='adrian, simon',
     author_email='mail@adrianwesth.dk',
     maintainer='simon, adrian',
     maintainer_email='mail@adrianwesth.dk',
-    url='https://github.com/ukuleleplayer/pureples',
+    url='https://github.com/eboshii/pureples-grad',
     license="MIT",
-    description='HyperNEAT and ES-HyperNEAT implemented in pure Python',
+    description='ES-HyperNEAT on n-dimensional substrates, with gradient-based split tests (a fork of PUREPLES)',
     long_description='Python implementation of HyperNEAT and ES-HyperNEAT ' +
                      'developed by Adrian Westh and Simon Krabbe Munck for evolving arbitrary neural networks. ' +
                      'HyperNEAT and ES-HyperNEAT is originally developed by Kenneth O. Stanley and Sebastian Risi',
@@ -25,5 +25,5 @@ setup(
         'Programming Language :: Python :: Implementation :: PyPy',
         'Topic :: Scientific/Engineering'
     ], 
-    install_requires=['numpy', 'neat-python', 'graphviz', 'matplotlib', 'gym']
+    install_requires=['numpy', 'neat-python==0.92', 'graphviz', 'matplotlib', 'gym']
 )
