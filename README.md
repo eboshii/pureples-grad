@@ -18,7 +18,7 @@ The original `es_hyperneat.py` is unchanged and serves as the baseline.
 * **Iteration fix.** In PUREPLES the iterated hidden-node search sets `unexplored = hidden_nodes - unexplored`, which re-explores nodes found two or more rounds earlier. With `params["fix_iteration"] = True` (the default in the new module) each hidden node is explored once. The published behaviour is kept for the regression test.
 * **Counters.** `ESNetworkND.stats()` reports the number of CPPN forward and backward passes.
 
-**Checks** (`python -m pytest tests`)
+**Checks** (`python -m pytest`)
 
 * `test_regression_2d.py`: with n = 2 and the published settings (`split_test="variance"`, `cache=False`, `fix_iteration=False`), the new module builds exactly the same hidden nodes, connections and weights as the original on 100 random CPPNs, for each of three parameter sets (30 CPPNs for the deep set).
 * `test_diff_cppn.py`: the backward pass matches central finite differences on random CPPNs using 12 activation functions, and the forward pass matches neat-python exactly.
